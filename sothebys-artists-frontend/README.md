@@ -1,6 +1,6 @@
-# Sotheby's Artists Frontend
+# Artists Frontend
 
-This project is a frontend application for displaying a list of artists and their artworks from Sotheby's auctions. It is built using React and TypeScript.
+This project is a frontend application for displaying a list of artists and their artworks from art auctions. It is built using React and TypeScript.
 
 ## Project Structure
 
@@ -41,14 +41,5 @@ sothebys-artists-frontend
 4. **Open your browser:**
    Navigate to `http://localhost:3000` to view the application.
 
-## Usage
 
-The application fetches data from the backend and displays it in a table format. You can view details about each artist, including their name, artwork title, estimated value, lot number, collecting society, and resale rights.
 
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License.
