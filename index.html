@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSV Generator</title>
+</head>
+<body>
+  <h2>Enter URL for Python Script</h2>
+  <input type="text" id="urlInput" size="60" placeholder="Paste URL here"><br>
+  <button onclick="runPythonScript()">Generate CSV</button>
+  <div id="downloadLink"></div>
+
+  <script>
+    async function runPythonScript() {
+      const url = document.getElementById('urlInput').value;
+      const response = await fetch('/run-script', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url })
+      });
+      if (response.ok) {
+        const blob = await response.blob();
+        const downloadUrl = URL.createObjectURL(blob);
+        document.getElementById('downloadLink').innerHTML =
+          `<a href="${downloadUrl}" download="output.csv">Download CSV</a>`;
+      } else {
+        document.getElementById('downloadLink').innerText = "Error generating CSV.";
+      }
+    }
+  </script>
+</body>
+</html>
